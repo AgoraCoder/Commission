@@ -1,0 +1,41 @@
+//it works just fine like this...
+//only when I move the variables outside the main do I have problems
+
+public class Commission
+{
+	public static void main(String[] args)
+	{
+		double sales = 1000;
+		double commissionRateDbl = .055;
+		int commissionRateInt = 6;
+		
+		Commission repOne = new Commission();
+		Commission repTwo = new Commission();
+		
+		repOne.computeCommission(sales, commissionRateDbl);
+		repTwo.computeCommission(sales, commissionRateInt);
+	}
+	
+	public void computeCommission(double totalSales, double rate)
+	{
+		double commission;
+		commission = totalSales * rate;
+		System.out.println(commission);
+	}
+	
+	public void computeCommission(double totalSales, int rate)
+	{
+		double commissionRate;
+		double commission;
+		commissionRate = rate/100.00;
+		commission = commissionRate*totalSales;
+		System.out.println(commission);
+	}
+	
+	public void computeCommission(double sales)
+	{
+		double commissionRate = .075;
+		commission = sales * commissionRate;
+		System.out.println(commission);
+	}
+}
